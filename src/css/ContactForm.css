@@ -1,0 +1,47 @@
+/* Error Shake Animation */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+  }
+  
+  .shake {
+    animation: shake 0.3s ease-in-out;
+  }
+  
+  /* Error Input Styling */
+  .error-input {
+    border: 2px solid red !important;
+    background: #ffe6e6;
+  }
+  
+  /* Error Message Text */
+  .error-text {
+    color: red;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: block;
+  }
+  
+  /* Fade-in Animation for Status Messages */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  
+  .status-message {
+    color: #333;
+    font-size: 1rem;
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  
