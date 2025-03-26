@@ -31,7 +31,6 @@ const Contact = () => {
     if (!formData.email.trim()) newErrors.email = "Email is required";
     if (!formData.subject.trim()) newErrors.subject = "Subject is required";
     if (!formData.message.trim()) newErrors.message = "Message cannot be empty";
-    if (!file) newErrors.file = "Please attach a file (resume/offers)";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0; // Returns true if no errors
@@ -49,7 +48,9 @@ const Contact = () => {
     formDataToSend.append("email", formData.email);
     formDataToSend.append("subject", formData.subject);
     formDataToSend.append("message", formData.message);
-    formDataToSend.append("file", file);
+    if (file) {
+      formDataToSend.append("attachment", file);
+    }
 
     try {
       const response = await fetch("https://api.rayonweb.com/api/send-email", {
@@ -176,7 +177,6 @@ const Contact = () => {
                         />
                         {file && <p className="file-name">{file.name}</p>}
                       </div>
-                      {errors.file && <span className="error-text fade-in">{errors.file}</span>}
                     </fieldset>
                     </div>
                     <div className="col-lg-12">
