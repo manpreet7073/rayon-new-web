@@ -6,8 +6,9 @@ const robotsFilePath = path.resolve('public/robots.txt');
 const sitemapFilePath = path.resolve('public/sitemap.xml');
 
 // Dynamically set the URL for production and local environments
-const sitemapUrl = 'https://rayonweb.com/sitemap.xml'  // Change to your production URL
-const host = 'https://rayonweb.com'
+const sitemapUrl = 'https://rayonweb.com/sitemap.xml';  // Change to your production URL
+const host = 'https://rayonweb.com';
+
 // Content of the robots.txt file
 const robotsContent = `
 User-agent: *
@@ -21,8 +22,7 @@ fs.writeFileSync(robotsFilePath, robotsContent);
 console.log('robots.txt has been generated successfully.');
 
 // Generate sitemap.xml dynamically
-const sitemapContent = `
-<?xml version="1.0" encoding="UTF-8"?>
+const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>${host}/</loc>
